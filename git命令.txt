@@ -1,1 +1,7 @@
  git status 查看git 文件状态
+
+git add //你修改的文件，删除的文件，新加的文件，都要git add  
+
+git commit -m "ddd"
+
+git push origin featrue/2022_02_14_first
