@@ -1,10 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2022-02-10 21:48:37
- * @LastEditTime: 2022-02-13 18:35:16
+ * @LastEditTime: 2022-02-14 15:56:28
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \java文件\01\Main.java
+ * 
+ * 
+ * git status
+
  */
 
 
@@ -14,11 +18,6 @@ public class Main {
         Array<Integer> www = new Array<>(5);
         www.addFirst(114);
 
-        www.addLast(810);
-
-        www.add(1,514);
-
-        www.add(2,1919);
 
         www.addLast(9527);
 
