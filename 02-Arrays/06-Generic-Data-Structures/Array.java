@@ -1,9 +1,9 @@
-public class Array {
-    private int[] data;
+public class Array<E> {
+    private E[] data;
     private int size;
 
     public Array(int capacity){
-        data = new int[capacity];
+        data = (E[])new Object[capacity];
         size = 0;
     }
 
@@ -23,7 +23,7 @@ public class Array {
         return size == 0;
     }
 
-    public void add(int index, int e){
+    public void add(int index, E e){
         if(index < 0 || index > size)
             throw new IllegalArgumentException("Add failed, Index is not in range.");
 
@@ -37,13 +37,13 @@ public class Array {
         size++;
     }
 
-    public void addFirst(int e){
+    public void addFirst(E e){
         if(size == data.length)
             throw new IllegalArgumentException("Add failed, Full capacity.");
         this.add(0, e);
     }
 
-    public void addLast(int e){
+    public void addLast(E e){
         if(size == data.length)
             throw new IllegalArgumentException("Add failed, Full capacity.");
         this.add(size, e);
@@ -64,39 +64,38 @@ public class Array {
         return res.toString();
     }
 
-    public int get(int index){
+    public E get(int index){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("Set failed. Index is not in range.");
         return data[index];
     }
 
-    public void set(int index, int e){
+    public void set(int index, E e){
         if(index < 0 || index >= size)
             throw new IllegalArgumentException("Set failed. Index is not in range.");
         data[index] = e;
     }
 
-    public boolean contains(int e){
-        int a = 0;
+    public boolean contains(E e){
         for(int i = 0; i < size; i++){
-            if(data[i] == e)
-                a++;
+            if(data[i].equals(e))
+                return true;
         }
-        return a != 0; 
+        return false;
     }
 
-    public int find(int e){
+    public int find(E e){
         for(int i = 0; i < size; i++){
-            if(data[i] == e)
+            if(data[i].equals(e))
                 return i;
         }
         return -1;
     }
 
-    public int delete(int index){
+    public E delete(int index){
         if(index < 0 || index >= size )
             throw new IllegalArgumentException("Delete failed. Index is not in range.");
-        int a = data[index];
+        E a = data[index];
         for(int i = index; i < size - 1; i++){
             data[i] = data[i + 1];
         }
@@ -104,22 +103,18 @@ public class Array {
         return a;
     }
 
-    public void deleteFirst(){
-        if(size == 0)
-            throw new IllegalArgumentException("Delete failed, size = 0.");
-        this.delete(0);
+    public E deleteFirst(){
+        return delete(0);
     }
 
-    public void deleteLast(){
-        if(size == 0)
-            throw new IllegalArgumentException("Delete failed, size = 0.");
-        this.delete(size - 1);
+    public E deleteLast(){
+        return delete(size - 1);
     }
 
-    public void deleteElement(int e){
+    public void deleteElement(E e){
         if(find(e) == -1)
             throw new IllegalArgumentException("Delete failed, Can't find the parameter");
-        this.delete(find(e));
+        delete(find(e));
     }
       
 }
