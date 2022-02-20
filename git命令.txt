@@ -1,5 +1,3 @@
-
-
 git fetch origin main:featrue/2022_02_14_first //从主分支上拉取一个新的分支
   
 git checkout featrue/2022_02_14_first  //从本地主分支上切换到本地新分支上。
@@ -11,13 +9,5 @@ git add //你修改的文件，删除的文件，新加的文件，都要git add
 git commit -m "ddd"
 
 git push origin featrue/2022_02_14_first
-
-
-
-
-
-
-
-
 
 git merge --no--ff featrue/2022_02_14_first 合并
