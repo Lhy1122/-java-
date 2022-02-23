@@ -2,8 +2,7 @@ public class LoopQueue<E> implements Queue<E> {
 
     private E[] data;
     private int front, tail;
-    private int size;  
-    
+    private int size;
 
     public LoopQueue(int capacity){
         data = (E[])new Object[capacity + 1];
