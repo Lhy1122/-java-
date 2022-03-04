@@ -1,11 +1,47 @@
-public class BST {
-    
+public class BST<E extends Comparable<E>> {
+
+    private class Node {
+        public E e;
+        public Node left, right;
+
+        public Node(E e) {
+            this.e = e;
+            left = null;
+            right = null;
+        }
+    }
+
+    private Node root;
+    private int size;
+
+    public BST(){
+        root = null;
+        size = 0;
+    }
+
+    public int size(){
+        return size;
+    }
+
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
+    public void add(E e){
+        root = add(root, e);
+    }
+
+    private Node add(Node node, E e){
+        if(node == null){
+            size ++;
+            return new Node(e);
+        }
+
+        if(e.compareTo(node.e) < 0)
+            node.left = add(node.left, e);
+        else if(e.compareTo(node.e) > 0)
+            node.right = add(node.right, e);
+
+        return node;
+    }
 }
-/*
- * @Author: your name
- * @Date: 2022-03-03 22:04:04
- * @LastEditTime: 2022-03-03 22:04:04
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \java-algorithm\06-Binary-Search-Tree\04-Improved-Add-Elements-in-BST\BST.java
- */
