@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2022-03-08 20:49:55
- * @LastEditTime: 2022-03-08 20:54:14
- * @LastEditors: your name
+ * @LastEditTime: 2022-03-09 22:12:27
+ * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \java-algorithm\06-Binary-Search-Tree\12-Remove-Elements-in-BST\Main.java
  */
@@ -15,8 +15,7 @@ public class Main {
 
         bst.remove(8);
         System.out.println(bst);
-
-        
+ 
 
     }
 }
