@@ -3,7 +3,7 @@ import java.util.Random;
 /*
  * @Author: your name
  * @Date: 2022-04-12 21:17:46
- * @LastEditTime: 2022-04-12 21:28:00
+ * @LastEditTime: 2022-04-12 21:53:45
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \java-algorithm\11-Union-Find\04-Optimized-by-Size\Main.java
@@ -42,5 +42,8 @@ public class Main {
 
         UnionFind2 uf2 = new UnionFind2(size);
         System.out.println("UnionFind2 : " + testUF(uf2, m) + " s");
+
+        UnionFind3 uf3 = new UnionFind3(size);
+        System.out.println("UnionFind3 : " + testUF(uf3, m) + " s");
     }
 }
